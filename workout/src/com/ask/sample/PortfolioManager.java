@@ -3,7 +3,12 @@
  */
 package com.ask.sample;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.PriorityQueue;
+import java.util.Queue;
+import java.util.stream.Collectors;
 
 /**
  * @author sahar8
@@ -15,15 +20,19 @@ public class PortfolioManager {
 	 * @param args
 	 */
 
-	static Node rootNode = null;
+	  Node rootNode = null;
+	  Queue<Node> queueNode = new PriorityQueue<Node>();
+	
+	  Queue<Node> oddQueue = new PriorityQueue<>();
+	  Queue<Node> evenQueue = new PriorityQueue<>();
 
-	public static void main(String[] args) {
+	public static  void main(String[] args) {
 		// TODO Auto-generated method stub
-		findMax(6, "3 4 5 1 3 # 1");
+		System.out.println(new PortfolioManager().findMax(6, "3 4 1 1 3 # 1"));
 
 	}
 
-	static Node searchNode(Node searchNode, int nodeValue) {
+	/* Node searchNode(Node searchNode, int nodeValue) {
 		Node resultNode = null;
 		while (searchNode != null && resultNode==null) {
 			if (searchNode.getData() ==nodeValue) {
@@ -40,51 +49,106 @@ public class PortfolioManager {
 		}
 		return resultNode;
 		
+	}*/
+	
+	
+	  int findMax(int n, String tree) {
+		buildNodes(tree);
+		return calculateMaxInvest();
 	}
-	static int findMax(int n, String tree) {
-		String[] inputNodes = tree.split(" ");
-//		int[] inputNodes = Arrays.stream(tree.split(" ")).map(String::trim).mapToInt(Integer::parseInt).toArray();
-		PortfolioManager managerv = new PortfolioManager();
-		Node currentNode = null;
-		int count = 1;
-		for (int i = 0; i < n; i++) {
-			if(String.valueOf(inputNodes[i]).equals("#")) {
-				continue;
-			}
-				if (rootNode == null) {
-					
-					rootNode = managerv.new Node();
-					rootNode.setData(Integer.parseInt(inputNodes[i]));
-					currentNode = rootNode;
-				} else {
-					currentNode = searchNode(rootNode,Integer.parseInt(inputNodes[i]));
-				}
-				if (currentNode != null) {
-					if (i+count < n) {
-						if(!String.valueOf(inputNodes[i+count]).equals("#")) {
-							Node leftNode = managerv.new Node();
-							leftNode.setData(Integer.parseInt(inputNodes[i+count]));
-							currentNode.setLeftNode(leftNode);
-						}
-						count++;
-						if(!String.valueOf(inputNodes[i+count]).equals("#")) {
-							Node rightNode = managerv.new Node();
-							rightNode.setData(Integer.parseInt(inputNodes[i+count]));
-							currentNode.setRightNode(rightNode);
-						}
-//						count++;
-					}
-				}
+	 
+	
+
+	private   int calculateMaxInvest() {
+		recuresive(rootNode, "odd");
+		int oddValue = oddQueue.stream().mapToInt(Node::getData).sum();
+		int evenValue = evenQueue.stream().mapToInt(Node::getData).sum();
+		int max = 0;
+		if(oddValue > evenValue) {
+			max = oddValue;
 		}
-
-		return n;
-
+		
+		if(oddValue < evenValue) {
+			max = evenValue;
+		}
+		return max;
+		
+	}
+	
+	private  void recuresive(Node node,String type) {
+		if (node != null) {
+			if (type.equalsIgnoreCase("odd")) {
+				oddQueue.add(node);
+				if (node.getLeftNode() != null) {
+					recuresive(node.getLeftNode(), "even");
+				}
+				if (node.getRightNode() != null) {
+					recuresive(node.getRightNode(), "even");
+				}
+				
+			} else {
+				evenQueue.add(node);
+				if (node.getLeftNode() != null) {
+					recuresive(node.getLeftNode(), "odd");
+				}
+				if (node.getRightNode() != null) {
+					recuresive(node.getRightNode(), "odd");
+				}
+			}
+		}
 	}
 
-	class Node {
+	private   void buildNodes(String tree) {
+		// TODO Auto-generated method stub
+		List<String> list = new ArrayList<String>(Arrays.stream(tree.split(" ")).collect(Collectors.toList()));
+		if (rootNode ==null) {
+			rootNode =(Node)new Node(Integer.parseInt(list.get(0)));
+			queueNode.offer(rootNode);
+		}
+		
+		int index = 1;
+		for (int i = 0; i < list.size(); i++) {
+			Node currentNode = queueNode.poll();
+			if (currentNode != null) {
+				String leftNodeVAlue = "#";
+				String rightNodeVAlue = "#";
+				if (i+index >= list.size()) {
+					break;
+				}
+				if (i+index+1 >= list.size()) {
+					rightNodeVAlue = "#";
+				}
+				leftNodeVAlue = list.get(i+index);
+				rightNodeVAlue = list.get(i+index+1);
+				Node leftNode = null;
+				Node rightNode = null;
+				if (!leftNodeVAlue.equalsIgnoreCase("#")) {
+					leftNode = new Node(Integer.parseInt(leftNodeVAlue));
+					currentNode.setLeftNode(leftNode);
+					queueNode.add(leftNode);
+				}
+				if (!rightNodeVAlue.equalsIgnoreCase("#")) {
+					rightNode = new Node(Integer.parseInt(rightNodeVAlue));
+					currentNode.setRightNode(rightNode);
+					queueNode.add(rightNode);
+				}
+				
+				
+			}
+			index++;
+		}
+		
+	}
+
+	class Node implements Comparable<Node>{
 		Node leftNode;
 		Node rightNode;
 		int data;
+
+		public Node(int data) {
+			// TODO Auto-generated constructor stub
+			this.data = data;
+		}
 
 		/**
 		 * @return the leftNode
@@ -130,6 +194,14 @@ public class PortfolioManager {
 		public void setData(int data) {
 			this.data = data;
 		}
+
+		@Override
+		public int compareTo(Node o) {
+			// TODO Auto-generated method stub
+			return 0;
+		}
+		
+		
 
 	}
 
