@@ -16,7 +16,7 @@ public class BinaryTreeLatestEdition {
 	public static void main(String[] args) {
 
 		int[] values = { 5, 6, 3, 1, 2, 4,7 };
-		int node1 = 1;
+		int node1 = 5;
 		int node2 = 7;
 		System.out.println(new BinaryTreeLatestEdition().bstDistance(values, values.length, node1, node2));
 
@@ -33,9 +33,15 @@ public class BinaryTreeLatestEdition {
 		}
 
 		NodeObject node = getCommonRootNode(node1, node2, rootNode);
+		if (node != null) {
 		int distanceNode1 = findDistance(node, node1);
 		int distanceNode2 = findDistance(node, node2);
+		if (distanceNode1 ==-1 || distanceNode2 == -1) {
+			return -1;
+		}
 		return distanceNode1 + distanceNode2;
+		}
+		return -1;
 
 	}
 
@@ -57,6 +63,9 @@ public class BinaryTreeLatestEdition {
 				currentNode = currentNode.getLeftNode();
 				distance++;
 			}
+			if (currentNode == null) {
+				return -1;
+			}
 		}
 		return distance;
 	}
@@ -77,7 +86,8 @@ public class BinaryTreeLatestEdition {
 			} else if (currentNode.getData() > node2 && currentNode.getData() > node1) {
 				currentNode = currentNode.getLeftNode();
 			} else if ((currentNode.getData() > node2 && currentNode.getData() < node1)
-					|| (currentNode.getData() < node2 && currentNode.getData() > node1)) {
+					|| (currentNode.getData() < node2 && currentNode.getData() > node1)
+					|| (currentNode.getData() == node2 || currentNode.getData() == node1)) {
 				flag = true;
 			}
 		}

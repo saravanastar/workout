@@ -16,6 +16,7 @@ public class BinaryTree {
 	public static void main(String[] args) {
 
 		int[] values = {5,6,3,1,2,4};
+		
 		int node1 = 2;
 		int node2 = 4;
 		System.out.println(bstDistance(values, values.length, node1, node2));
