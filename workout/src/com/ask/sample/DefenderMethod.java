@@ -7,7 +7,7 @@ package com.ask.sample;
  * @author sahar8
  *
  */
-public class DefenderMethod implements defenderInterface1 {
+public class DefenderMethod implements DefenderInterface1 {
 
 	public static void main(String[] args) {
 		new DefenderMethod().test();
@@ -15,13 +15,13 @@ public class DefenderMethod implements defenderInterface1 {
 
 }
 
-interface defenderInterface1 extends defenderInterface2 {
+interface DefenderInterface1 extends DefenderInterface2 {
 	default void test() {
 		System.out.println("test");
 	}
 }
 
-interface defenderInterface2 {
+interface DefenderInterface2 {
 	default void test() {
 		System.out.println("test2");
 	}

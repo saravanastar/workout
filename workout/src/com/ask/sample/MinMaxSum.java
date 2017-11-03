@@ -40,6 +40,7 @@ public class MinMaxSum {
 				}
 			}
 	        System.out.println(min + " "+max);
+	        in.close();
 	}
 
 }

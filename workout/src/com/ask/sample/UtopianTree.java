@@ -5,7 +5,6 @@ package com.ask.sample;
 
 import java.util.Scanner;
 
-import jdk.internal.org.objectweb.asm.tree.IntInsnNode;
 
 /**
  * @author sahar8
@@ -37,7 +36,7 @@ public class UtopianTree {
 			System.out.println(initialGrowth);
 			initialGrowth = 1;
 		}
-
+		userInput.close();
 	}
 
 }

@@ -39,6 +39,7 @@ public class MinimumDistances {
         } else {
         	System.out.println("-1");
         }
+        in.close();
 	}
 
 }

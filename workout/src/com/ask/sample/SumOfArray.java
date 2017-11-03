@@ -40,6 +40,7 @@ public class SumOfArray {
 			
 		}
 		System.out.println(leftCount-rightCount);
+		scan.close();
 	}
 
 }

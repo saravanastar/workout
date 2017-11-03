@@ -37,7 +37,7 @@ public class PlusMinus {
 		System.out.println((double)positiveCount/arrayCount);
 		System.out.println((double)negativeCount/arrayCount);
 		System.out.println((double)zeroCount/arrayCount);
-		
+		userInput.close();
 
 	}
 

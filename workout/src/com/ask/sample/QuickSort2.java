@@ -25,6 +25,7 @@ public class QuickSort2 {
            ar[i]=in.nextInt(); 
         }
         quickSort2(ar);
+        in.close();
 	}
 	
 	 static void printArray(int[] ar) {

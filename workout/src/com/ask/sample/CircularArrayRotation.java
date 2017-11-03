@@ -21,7 +21,7 @@ public class CircularArrayRotation {
 		int k = userInput.nextInt();
 		int q = userInput.nextInt();
 		int[] array = new int[n];
-		int[] queryArray = new int[q];
+//		int[] queryArray = new int[q];
 		
 		for (int i = 0; i < n; i++) {
 			array[i] = userInput.nextInt();
@@ -55,6 +55,7 @@ public class CircularArrayRotation {
 			System.out.println(array[arrayPosition]);
 			
 		}
+		userInput.close();
 		
 	}
 

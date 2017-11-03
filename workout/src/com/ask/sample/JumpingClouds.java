@@ -42,6 +42,7 @@ public class JumpingClouds {
 
 		}
 		System.out.println(totalEnergy);
+		in.close();
 	}
 
 }

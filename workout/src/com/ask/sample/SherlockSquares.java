@@ -32,7 +32,7 @@ public class SherlockSquares {
 			count = 0;
 			
 		}
-
+		userInput.close();
 	}
 
 }

@@ -33,6 +33,7 @@ public class RomanNumericHere {
 
 		output = evaluateExpression(ip1);
 		System.out.println(String.valueOf(output));
+		in.close();
 	}
 
 	public static String evaluateExpression(String input1) {

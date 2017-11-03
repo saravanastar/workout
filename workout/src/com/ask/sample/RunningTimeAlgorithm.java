@@ -23,6 +23,7 @@ public class RunningTimeAlgorithm {
 			ar[i] = in.nextInt();
 		}
 		sort(ar);
+		in.close();
 
 	}
 	public static void sort(int[] ar) {

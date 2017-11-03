@@ -17,11 +17,11 @@ public class DaysBetween {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println(DaysBetween(2010, 5, 01, 2011, 5, 1));
+		System.out.println(numberOfDays(2010, 5, 01, 2011, 5, 1));
 
 	}
 
-	static int DaysBetween(int year1, int month1, int day1, int year2, int month2, int day2) {
+	static int numberOfDays(int year1, int month1, int day1, int year2, int month2, int day2) {
 		Calendar calendar1 = new GregorianCalendar();
 		Calendar calendar2 = new GregorianCalendar();
 

@@ -20,7 +20,6 @@ public class ArmyHelicopter {
 		if(input2 == null || input2.length < input1[1] || input2[0].length() < input1[0]) {
 			return -1;
 		}
-		String[] result = new String[input1[1]];
 		int max = 0;
 		for (int i = 0; i < input2.length; i++) {
 			for (int j = i+1; j < input2.length; j++) {

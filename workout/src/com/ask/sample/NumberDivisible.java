@@ -30,7 +30,7 @@ public class NumberDivisible {
 			}
 			System.out.println(count);
 		}
-
+		userInput.close();
 	}
 
 }

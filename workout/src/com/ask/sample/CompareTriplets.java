@@ -50,6 +50,7 @@ public class CompareTriplets {
 	        }
 
 	        System.out.println(""+ alicePoint + " "+ bPoint);
+	        in.close();
 	}
 
 }

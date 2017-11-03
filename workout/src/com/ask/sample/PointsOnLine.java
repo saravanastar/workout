@@ -18,8 +18,8 @@ public class PointsOnLine {
 	 */
 	 public static void main(String[] args) {
 	        Scanner in = new Scanner(System.in);
-	        Set horizontalSet = new HashSet();
-	        Set verticalSet = new HashSet();
+	        Set<Integer> horizontalSet = new HashSet<>();
+	        Set<Integer> verticalSet = new HashSet<Integer>();
 	        int n = in.nextInt();
 	        for(int a0 = 0; a0 < n; a0++){
 	            int x = in.nextInt();
@@ -32,6 +32,7 @@ public class PointsOnLine {
 	        } else {
 	        	System.out.println("NO");
 	        }
+	        in.close();
 	    }
 
 }

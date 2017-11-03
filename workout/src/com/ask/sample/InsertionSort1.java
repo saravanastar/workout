@@ -45,7 +45,7 @@ public class InsertionSort1 {
 				System.out.print(array[j]+ " ");
 			}
 		}
-		
+		userInput.close();
 	}
 
 }

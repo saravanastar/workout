@@ -26,6 +26,7 @@ public class GearsWar {
 				System.out.println("No");
 			}
 		}
+		userInput.close();
 
 	}
 

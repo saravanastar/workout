@@ -36,7 +36,7 @@ public class GemElements {
 			}
 		}
 		System.out.println(result);
-
+		userInput.close();
 	}
 
 }

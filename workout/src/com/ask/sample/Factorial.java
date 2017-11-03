@@ -19,6 +19,7 @@ public class Factorial {
 		      fact=fact.multiply(new BigInteger(String.valueOf(i))) ;   
 		  }
 		 System.out.println(fact.toString());
+		 in.close();
 	}
 	
 

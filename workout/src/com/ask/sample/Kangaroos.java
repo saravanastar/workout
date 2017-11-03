@@ -39,7 +39,7 @@ public class Kangaroos {
 				System.out.println("NO");
 			}
 		}
-
+		in.close();
 	}
 
 }

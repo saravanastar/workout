@@ -23,6 +23,7 @@ public class InsertionSort2 {
 			ar[i] = in.nextInt();
 		}
 		sort(ar);
+		in.close();
 	}
 
 	public static void sort(int[] ar) {

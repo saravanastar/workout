@@ -1,6 +1,5 @@
 package com.ask.sample;
 
-import java.util.Collections;
 
 public class RemoveKFromList {
 

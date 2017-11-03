@@ -32,6 +32,7 @@ public class FibonacciModified {
 		}
 		System.out.println(output.toString());
 
+		userInput.close();
 	}
 
 }

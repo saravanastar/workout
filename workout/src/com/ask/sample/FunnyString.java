@@ -14,6 +14,7 @@ public class FunnyString {
 	/**
 	 * @param args
 	 */
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner userInput = new Scanner(System.in);
@@ -47,6 +48,7 @@ public class FunnyString {
 			}
 			
 		}
+		userInput.close();
 
 	}
 

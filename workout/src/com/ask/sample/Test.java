@@ -1,6 +1,5 @@
 package com.ask.sample;
 
-import java.awt.List;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -12,6 +11,7 @@ public class Test {
 		String str = new String(chars);
 		byte[] bytes = str.getBytes();
 		System.out.println(Arrays.toString(bytes));
+		@SuppressWarnings("unused")
 		SingletonClass singletonClass = SingletonClass.getInstance();
 		singletonClass = SingletonClass.getInstance();
 		singletonClass = SingletonClass.getInstance();

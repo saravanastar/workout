@@ -24,7 +24,7 @@ public class SpeedCamers {
 	}
 
 	public void insertNode(int a, int b) {
-		Node searchedNode = searchNode(a);
+		searchNode(a);
 	}
 
 	public Node searchIrrelationalNode(int a) {

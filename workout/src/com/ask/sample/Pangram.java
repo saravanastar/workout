@@ -20,6 +20,7 @@ public class Pangram {
 		Scanner userInput = new Scanner(System.in);
 		String sentence = userInput.nextLine();
 		System.out.println(isPangram(sentence)?"pangram":"not pangram");
+		userInput.close();
 
 	}
 	

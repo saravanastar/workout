@@ -18,7 +18,7 @@ public class FairNations {
 		// TODO Auto-generated method stub
 		Scanner userInput = new Scanner(System.in);
 		
-
+		userInput.close();
 	}
 
 }

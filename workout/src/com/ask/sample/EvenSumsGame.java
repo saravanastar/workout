@@ -17,8 +17,8 @@ public class EvenSumsGame {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] input = { 4, 5, 3, 7, 2 };
-		int[] input1 = { 6 };
+//		int[] input = { 4, 5, 3, 7, 2 };
+//		int[] input1 = { 6 };
 		int[] input2 = { 2, 5, 4 };
 		System.out.println(new EvenSumsGame().solution(input2));
 	}

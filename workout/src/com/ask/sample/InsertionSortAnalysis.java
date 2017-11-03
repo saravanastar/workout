@@ -41,7 +41,7 @@ public class InsertionSortAnalysis {
 			System.out.println(totalcount);
 
 		}
-
+		userInput.close();
 	}
 
 }

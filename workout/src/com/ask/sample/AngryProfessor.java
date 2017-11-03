@@ -3,7 +3,6 @@
  */
 package com.ask.sample;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -44,7 +43,7 @@ public class AngryProfessor {
 				System.out.println("YES");
 			}
 		}
-
+		userInput.close();
 	}
 
 }

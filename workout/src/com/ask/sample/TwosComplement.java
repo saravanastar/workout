@@ -39,6 +39,7 @@ public class TwosComplement {
 			System.out.println(result);
 			
 		}
+		userInput.close();
 	}
 
 }

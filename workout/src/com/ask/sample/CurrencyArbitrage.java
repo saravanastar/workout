@@ -3,7 +3,6 @@
  */
 package com.ask.sample;
 
-import java.util.Arrays;
 
 /**
  * @author sahar8

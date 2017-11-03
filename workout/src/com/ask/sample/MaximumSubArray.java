@@ -23,6 +23,7 @@ public class MaximumSubArray {
 			array[i] = userInput.nextInt();
 		}
 		System.out.println(maxSubArray(array));
+		userInput.close();
 	}
 	
 	  public static int maxSubArray(int[] array) {

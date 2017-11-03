@@ -21,5 +21,6 @@ public class PDFViewer {
 			}
 		}
 		System.out.println(max * word.length());
+		in.close();
 	}
 }

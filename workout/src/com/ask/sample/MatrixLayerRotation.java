@@ -20,6 +20,7 @@ public class MatrixLayerRotation {
 			rotateArray(inputArray, 0,0);
 		}
 		printArray(inputArray);
+		userInput.close();
 		
 	}
 

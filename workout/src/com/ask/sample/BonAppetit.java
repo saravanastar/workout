@@ -38,6 +38,7 @@ public class BonAppetit {
 		} else {
 			System.out.println(result);
         }
+		in.close();
     }
 
 }

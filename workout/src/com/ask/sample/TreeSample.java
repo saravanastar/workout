@@ -11,7 +11,7 @@ public class TreeSample {
 	public static NodeObject root;
 
 	public TreeSample() {
-		this.root = null;
+		root = null;
 	}
 
 	public boolean find(int id) {
@@ -159,7 +159,7 @@ public class TreeSample {
 		b.insert(15);
 		b.insert(16);
 		System.out.println("Original Tree : ");
-		b.display(b.root);
+		b.display(root);
 		System.out.println("");
 		System.out.println("Check whether Node with value 4 exists : " + b.find(4));
 		System.out.println("Delete Node with no children (2) : " + b.delete(2));

@@ -14,7 +14,7 @@ public class KindergardenCandy {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] score = {1,2,2};
+//		int[] score = {1,2,2};
 		int[] score1 = {2,4,2,6,1,7,8,9,2,1};
 		System.out.println(distributedCandy(score1));
 		

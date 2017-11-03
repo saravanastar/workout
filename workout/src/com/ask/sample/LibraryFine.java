@@ -45,7 +45,7 @@ public class LibraryFine {
 				System.out.println(10000);
 			}
 		}
-
+		userInput.close();
 	}
 
 }

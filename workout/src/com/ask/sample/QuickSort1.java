@@ -25,6 +25,7 @@ public class QuickSort1 {
             ar[i]=in.nextInt(); 
          }
          partition(ar);
+         in.close();
 
 	}
 
