@@ -14,7 +14,9 @@ public class NQueensProblem {
 		if (col >= length) {
 			return true;
 		}
-
+		if (input[0][2] == 1) {
+			System.out.println("dsfsdf");
+		}
 		for (int i = 0; i < length; i++) {
 
 			if (isSafe(input, i, col)) {
