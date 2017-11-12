@@ -14,8 +14,8 @@ public class LongestCoomonSubSequence {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String a = "acbaed";
-		String b = "abcadf";
+		String a = "12341";
+		String b = "341213";
 		System.out.println(getLongestCommonSubsequence(a, b));
 	}
 	
