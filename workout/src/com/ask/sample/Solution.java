@@ -1,5 +1,8 @@
 package com.ask.sample;
 
+import java.util.HashSet;
+import java.util.Set;
+
 //IMPORT LIBRARY PACKAGES NEEDED BY YOUR PROGRAM
 //SOME CLASSES WITHIN A PACKAGE MAY BE RESTRICTED
 //DEFINE ANY CLASS AND METHOD NEEDED
@@ -11,12 +14,13 @@ public class Solution
  
  public static void main(String[] args) {
 
-		int[] values = {5,6,3,1,2,4};
-		
-		int node1 = 5;
-		int node2 = 4;
-		System.out.println(new Solution().bstDistance(values, values.length, node1, node2));
-		
+//		int[] values = {5,6,3,1,2,4};
+//
+//		int node1 = 5;
+//		int node2 = 4;
+//		System.out.println(new Solution().bstDistance(values, values.length, node1, node2));
+	 System.out.println(decrypt("flgxswdliefy"));
+//     System.out.println(decrypt("dnotq"));
 	}
  
 public int bstDistance(int[] values, int n, 
@@ -117,6 +121,61 @@ public int bstDistance(int[] values, int n,
 			NodeObject rightNode = new NodeObject(i);
 			parentNode.setRigthNode(rightNode);
 		}
+	}
+
+	static String decrypt(String word) {
+        // your code goes here
+        String decryptedString = "";
+        if (word.length() > 0) {
+            int initValue = 0;
+            int multiplyTimes = 0;
+            int previousValue = 0;
+			decryptedString+=String.valueOf((char)(((int)word.charAt(0)) -1) );
+            for (int i = 1; i < word.length(); i++) {
+				 previousValue = word.charAt(i-1);
+				int currentValue = word.charAt(i);
+               	double multiplyCount = (int)(Math.ceil(Math.abs(previousValue+currentValue)/26)) - 4;
+                int result  = (int)Math.abs((multiplyCount * 26 + currentValue) - previousValue);
+                while (result > 122) {
+                    result = result-26;
+                }
+                while (result < 96) {
+                    result = result+26;
+                }
+
+				decryptedString+=String.valueOf((char)result );
+
+            }
+        }
+        return decryptedString;
+	}
+
+	static int deletionDistance(String str1, String str2) {
+		// your code goes here
+		if (str1.length()<=2 && str2.length()<=2) {
+			return str1.length();
+		}
+		Set<String> stringSet = new HashSet<>();
+		int equalCount =0;
+		for(int i = 0,j = 0; i<(str1.length()>str2.length()?str1.length():str2.length());i++, j++) {
+			if (i<str1.length()) {
+				String tmp = String.valueOf(str1.charAt(i));
+
+				if (stringSet.add(tmp) == false) {
+					equalCount+=2;
+				}
+			}
+			if (j<str2.length()) {
+				String tmp = String.valueOf(str2.charAt(j));
+
+				if (stringSet.add(tmp) == false) {
+					equalCount+=2;
+				}
+			}
+
+		}
+
+		return Math.max(0,(str1.length()+str2.length()) - equalCount);
 	}
 // METHOD SIGNATURE ENDS
 }

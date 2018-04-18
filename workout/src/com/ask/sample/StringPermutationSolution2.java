@@ -4,7 +4,7 @@ public class StringPermutationSolution2 {
 
     public static void main(String[] args) {
         StringPermutationSolution2 stringPermutationRetry = new StringPermutationSolution2();
-        String inputString = "ABC";
+        String inputString = "ABCDE";
         int fixNumber = 0;
         stringPermutationRetry.findPermutation(inputString, fixNumber);
     }
