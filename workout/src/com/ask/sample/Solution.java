@@ -1,5 +1,6 @@
 package com.ask.sample;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -126,7 +127,9 @@ public int bstDistance(int[] values, int n,
 	static String decrypt(String word) {
         // your code goes here
         String decryptedString = "";
-        if (word.length() > 0) {
+        String[] ss = word.split("");
+		Arrays.binarySearch(ss,"a");
+		if (word.length() > 0) {
             int initValue = 0;
             int multiplyTimes = 0;
             int previousValue = 0;

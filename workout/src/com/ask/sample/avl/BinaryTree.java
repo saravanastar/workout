@@ -7,7 +7,7 @@ public class BinaryTree {
 
     Node rootNode;
     public static void main(String[] args) {
-        int[] inpitArray = {10,5,15,-10,-5,-1};
+        int[] inpitArray = {10,5,15,-10,-5,-1,8};
 //        int[] inpitArray = {3,2,1,0,4};
         BinaryTree tree = new BinaryTree();
 
@@ -27,6 +27,31 @@ public class BinaryTree {
         System.out.println("Balanced tree  "+balanced);
         tree.iterateDFS();
 
+        System.out.println("second largest " + tree.secondLargestElement(tree.rootNode));
+    }
+
+    private int secondLargestElement(Node node) {
+        if (node != null) {
+            if (node.right != null && node.right.left == null && node.right.right == null) {
+                return node.data;
+            }
+
+            if (node.right == null && node.left != null) {
+                return findLargest(node.left);
+            }
+            return secondLargestElement(node.right);
+        }
+        return 0;
+    }
+
+    private int findLargest(Node node) {
+        if (node != null) {
+            if (node.right != null) {
+                return findLargest(node.right);
+            }
+            return node.data;
+        }
+        return 0;
     }
 
     private boolean fixBalance() {

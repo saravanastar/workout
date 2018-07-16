@@ -3,7 +3,7 @@ package com.ask.sample;
 public class StringPermutation {
 	
 	public static void main(String[] args) {
-		String inputString = "ABC";
+		String inputString = "AABC";
 		StringPermutation permutaiton = new StringPermutation();
 		permutaiton.findPermutation(inputString, 0, inputString.length()-1);
 	}
