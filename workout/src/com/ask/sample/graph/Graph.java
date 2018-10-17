@@ -1,7 +1,5 @@
 package com.ask.sample.graph;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
-
 import java.util.*;
 
 public class Graph {

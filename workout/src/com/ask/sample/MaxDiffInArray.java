@@ -2,9 +2,11 @@ package com.ask.sample;
 
 public class MaxDiffInArray {
     public static void main(String[] args) {
-    int[] input = {2,3,10,2,4,8,1};
-//    int[] input = {5,10,8,7,6,5};
-        System.out.println(new MaxDiffInArray().maxDifference(input));
+//    int[] input = {7,2,3,10,2,4,8,1};
+        int[] input = {5, 10, 8, 7, 6, 5};
+
+
+//        System.out.println(new MaxDiffInArray().maxDifference(input));
         System.out.println(new MaxDiffInArray().maxDifference1(input));
     }
     int maxDifference(int[] a) {
@@ -54,5 +56,36 @@ public class MaxDiffInArray {
                 min = a[i];
         }
         return max;
+    }
+
+    int maxDifference2(int[] a) {
+        int result = -1;
+        boolean smallerItemFlag = false;
+        if (a.length > 0) {
+            int min = a[0], max=a[0];
+
+            for(int index=1; index< a.length; index++) {
+                if (a[index] > max) {
+                    max = a[index];
+
+                }else  {
+                    if (a[index] > max) {
+                        smallerItemFlag = true;
+                    }
+                    max = a[index];
+                    min = a[index];
+
+                }
+                result = Math.max(result, max-min);
+            }
+            if (smallerItemFlag) {
+                return -1;
+            }
+            if (min < max) {
+                return max-min;
+            }
+        }
+        return result;
+
     }
 }
